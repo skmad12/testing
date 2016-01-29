@@ -1,0 +1,30 @@
+#image-container {
+	width: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#input-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;	
+}
+
+#image-container{
+	margin: 0 auto;
+}
+
+#image-container img {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.input-group {
+	max-width: 400px;
+}
+
+.alert {
+	margin-top: 50px;
+}

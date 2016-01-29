@@ -1,0 +1,11 @@
+extends layout.jade
+block content
+	.container
+		div#image-container
+			img(src="/static/imgs/dreissena_polymorpha/1.jpg", alt="img failed to load")
+	#input-container.container
+		.input-group
+			input.form-control(type='text', placeholder='Answer')
+			span.input-group-btn
+				button#submit.btn.btn-default(type='button') Submit
+		#result.alert.alert-success(role="alert") Correct!

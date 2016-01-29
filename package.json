@@ -1,0 +1,29 @@
+{
+  "name": "invasives",
+  "version": "1.0.0",
+  "description": "Invasive Species Science Olympiad Testing APp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi-yu/invasives.git"
+  },
+  "keywords": [
+    "science",
+    "olympiad",
+    "invasive",
+    "species"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mi-yu/invasives/issues"
+  },
+  "homepage": "https://github.com/mi-yu/invasives#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
+  }
+}
