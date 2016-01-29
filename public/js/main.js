@@ -24,7 +24,7 @@ $(document).ready(function() {
 		}
 	};
 	var showAns = function() {
-		$("#answer").text("Correct answer: "+currFolder);
+		$("#answer").text("Correct answer: "+currFolder.replace("_"," "));
 	}
 	$("#submit").click(validate);
 	$("#show-ans").click( function() {
