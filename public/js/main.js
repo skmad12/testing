@@ -1,18 +1,26 @@
 $(document).ready(function() {
-	var currFolder = "";
-	var currIndex = null;
-	//var folderNames = [Diaphorina citri,Anoplophora glabripennis,Aedes albopictus,Halyomorpha halys,Cactoblastis cactorum,Scirtothrips dorsalis,Anoplophora chinensis,Tomicus piniperda,Agrilus planipennis,Lymantria dispar,Ips typographus,Coptotermes formosanus,Lissachatina fulica,Homalodisca vitripennis,Adelges tsugae,Epiphyas postvittana,Ceratitis capitata,Anastrepha ludens,Pectinophora gossypiella,Maconellicoccus hirsutus,Solenopsis invicta,Diuraphis noxia,Bemisia argentifolii,Heterodera glycines,Alosa pseudoharengus,Asian carp,Corbicula fluminea,Hemigrapsus sanguineus,Monopterus albus,Eriocheir sinensis,Styela clava,Gymnocephalus cernuus,Carcinus maenas,Pterois volitans,Channa argus,Potamopyrgus antipodarum,Myocastor coypus,Dreissena bugensis,Neogobius melanostomus,Orconectes rusticus,Petromyzon marinus,Didemnum vexillum,Bythotrephes longimanus,Rapana venosa,Phyllorhiza punctata,Dreissena polymorpha,Dioscorea bulbifera,Elaeagnus umbellata,Vitex rotundifolia,Schinus terebinthifolius,Cirsium arvense,Triadica sebifera,Imperata cylindrica,Rhamnus cathartica,Dipsacus fullonum,Linaria dalmatica,Centaurea diffusa,Bromus tectorum,Ficaria verna,Alliaria petiolata,Heracleum mantegazzianum,Lepidium appelianum,Cynoglossum officinale,Lygodium japonicum,Lonicera japonica,Fallopia japonica,Spiraea japonica,Microstegium vimineum,Sorghum halepense,Pueraria montana var. lobata,Euphorbia esula,Taeniatherum caput-medusae,Persicaria perfoliata,Rosa multiflora,Carduus nutans,Lygodium microphyllum,Paulownia tomentosa,Centaurea calcitrapa,Rhaponticum repens,Elaeagnus angustifolia,Tamarix spp,Hypericum perforatum,Cytisus scoparius,Onopordum acanthium,Centaurea stoebe,Ailanthus altissima,Solanum viarum,Lepidium draba,Striga asiatica,Centaurea solstitialis,Linaria vulgaris,Alternanthera philoxeroides,Egeria densa,Caulerpa taxifolia,Phragmites australis,Potamogeton crispus,Didymosphenia geminata,Myriophyllum spicatum,Arundo donax,Salvinia molesta,Hydrilla verticillata,Melaleuca quinquenervia,Lythrum salicaria,Eichhornia crassipes,Pistia stratiotes,Ipomoea aquatica,Ophiostoma,Sirococcus clavigignenti-juglandacearum,Ceratocystis fagacearum,Pseudogymnoascus destructans,Orbivirus,Flavivirus,H5N5];
-	var indices = [];
-	for (var i=0; i<133; i++){
-		indices[i]=i;
-	}
 
+	var currFolder = "";
+	var currIndex = 0;
+	var folderNames = ["Diaphorina_citri","Anoplophora_glabripennis","Aedes_albopictus","Halyomorpha_halys","Cactoblastis_cactorum","Scirtothrips_dorsalis","Anoplophora_chinensis","Tomicus_piniperda","Agrilus_planipennis","Lymantria_dispar","Ips_typographus","Coptotermes_formosanus","Lissachatina_fulica","Homalodisca_vitripennis","Adelges_tsugae","Epiphyas_postvittana","Ceratitis_capitata","Anastrepha_ludens","Pectinophora_gossypiella","Maconellicoccus_hirsutus","Solenopsis_invicta","Diuraphis_noxia","Bemisia_argentifolii","Heterodera_glycines","Alosa_pseudoharengus","Asian_carp","Corbicula_fluminea","Hemigrapsus_sanguineus","Monopterus_albus","Eriocheir_sinensis","Styela_clava","Gymnocephalus_cernuus","Carcinus_maenas","Pterois_volitans","Channa_argus","Potamopyrgus_antipodarum","Myocastor_coypus","Dreissena_bugensis","Neogobius_melanostomus","Orconectes_rusticus","Petromyzon_marinus","Didemnum_vexillum","Bythotrephes_longimanus","Rapana_venosa","Phyllorhiza_punctata","Dreissena_polymorpha","Dioscorea_bulbifera","Elaeagnus_umbellata","Vitex_rotundifolia","Schinus_terebinthifolius","Cirsium_arvense","Triadica_sebifera","Imperata_cylindrica","Rhamnus_cathartica","Dipsacus_fullonum","Linaria_dalmatica","Centaurea_diffusa","Bromus_tectorum","Ficaria_verna","Alliaria_petiolata","Heracleum_mantegazzianum","Lepidium_appelianum","Cynoglossum_officinale","Lygodium_japonicum","Lonicera_japonica","Fallopia_japonica","Spiraea_japonica","Microstegium_vimineum","Sorghum_halepense","Pueraria_montana_var._lobata","Euphorbia_esula","Taeniatherum_caput-medusae","Persicaria_perfoliata","Rosa_multiflora","Carduus_nutans","Lygodium_microphyllum","Paulownia_tomentosa","Centaurea_calcitrapa","Rhaponticum_repens","Elaeagnus_angustifolia","Tamarix_spp","Hypericum_perforatum","Cytisus_scoparius","Onopordum_acanthium","Centaurea_stoebe","Ailanthus_altissima","Solanum_viarum","Lepidium_draba","Striga_asiatica","Centaurea_solstitialis","Linaria_vulgaris","Alternanthera_philoxeroides","Egeria_densa","Caulerpa_taxifolia","Phragmites_australis","Potamogeton_crispus","Didymosphenia_geminata","Myriophyllum_spicatum","Arundo_donax","Salvinia_molesta","Hydrilla_verticillata","Melaleuca_quinquenervia","Lythrum_salicaria","Eichhornia_crassipes","Pistia_stratiotes","Ipomoea_aquatica","Ophiostoma","Sirococcus_clavigignenti-juglandacearum","Ceratocystis_fagacearum","Pseudogymnoascus_destructans","Orbivirus","Flavivirus","H5N5"];
+	// var indices = [];
+	// for (var i=0; i<133; i++){
+	// 	indices[i]=i;
+	// }
+	var getNewImg = function() {
+		var tempIndex = Math.floor(Math.random()*113);
+		currFolder = folderNames[tempIndex];
+		currIndex = Math.floor(Math.random()*10);
+		$("#image-container > img").attr('src','/static/imgs/'+currFolder+'/'+currIndex+'.jpg');
+	}
+	getNewImg();
 	var result = $("#result");
 	var validate = function() {
-		if($(".form-control").val()==="regina is difficult") {
+		if($(".form-control").val().toLowerCase()==="regina is difficult" /*currFolder.toLowerCase()*/) {
 			result.text("Correct!");
 			result.removeClass("alert-danger").addClass("alert-success");
 			console.log("correct");
+			getNewImg();
 		}
 		else {
 			result.text("You are wrong!");
@@ -20,7 +28,15 @@ $(document).ready(function() {
 			console.log("incorrect");
 		}
 	};
+
+	var showAns = function() {
+		$("#answer").text("Correct answer: "+currFolder);
+	}
 	$("#submit").click(validate);
+	$("#show-ans").click( function() {
+		$("#answer").toggle();
+		showAns();
+	});
 	$(".form-control").keypress(function (e) {
 		console.log(e);
 		var key = e.which;
@@ -29,7 +45,3 @@ $(document).ready(function() {
 		}
 	});
 });
-// getNewImg = function() {
-// 	var tempIndex = Math.floor(Math.random()*113);
-// 	currFolder = folderNames[tempIndex];
-// }
