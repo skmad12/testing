@@ -8,7 +8,7 @@ $(document).ready(function() {
 	}
 
 	var result = $("#result");
-	$("#submit").click(function() {
+	var validate = function() {
 		if($(".form-control").val()==="regina is difficult") {
 			result.text("Correct!");
 			result.removeClass("alert-danger").addClass("alert-success");
@@ -18,6 +18,14 @@ $(document).ready(function() {
 			result.text("You are wrong!");
 			result.addClass("alert-danger").removeClass("alert-success");
 			console.log("incorrect");
+		}
+	};
+	$("#submit").click(validate);
+	$(".form-control").keypress(function (e) {
+		console.log(e);
+		var key = e.which;
+		if (key==13){
+			validate();
 		}
 	});
 });
