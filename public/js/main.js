@@ -28,6 +28,7 @@ $(document).ready(function() {
 			result.removeClass("hidden");
 			console.log("correct");
 			$(".form-control").val("");
+			$("#answer").addClass("hidden");
 			incrementCount(true);
 			getNewImg();
 		}
@@ -70,6 +71,10 @@ $(document).ready(function() {
 		getNewImg();
 	})
 	$("#submit").click(validate);
+	$("#skip").click( function() {
+		incrementCount(false);
+		getNewImg();
+	})
 	$("#show-ans").click( function() {
 		$("#answer").toggleClass("hidden");
 		showAns();
