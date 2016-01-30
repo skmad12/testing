@@ -1,3 +1,5 @@
+/* Helper Classes */
+
 * {
 	box-sizing: border-box;
 }
@@ -5,46 +7,69 @@
 .hidden {
 	display: none;
 }
-.container, #image-container {
-	width: 70%;
+
+#wrap {
+	height: 100vh;
+}
+
+/*------------------------------*/
+
+/* Container Styles */
+
+.container {
+	width: 90%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
 
-#wrap {
-	height: 100vh;
-}
+/*------------------------------*/
+
+/* Start Game Button */
 
 #start-game {
 	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 
-#input-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;	
-}
+/*------------------------------*/
 
-#image-container{
-	margin: 0 auto;
-}
+/* Image */
 
 #image-container img {
 	margin-bottom: 50px;
 	overflow: hidden;
+	border-radius: 5px;
 }
+
+/*------------------------------*/
+
+/* Answer Section */
 
 .input-group {
 	max-width: 400px;
 }
 
 .alert {
-	margin-top: 15px;
+	margin-top: 20px;
 }
+
+/*------------------------------*/
+
+/* Settings */
+
+.checkbox {
+	margin-left: 20px;
+}
+
+#options {
+	margin-bottom: 25px;
+}
+
+/*------------------------------*/
+
+/* Stats Section */
 
 #stats {
 	display: flex;
@@ -73,8 +98,4 @@
 	color: #d9534f;
 }
 
-#divider {
-	width: 2px;
-	height: 100%;
-	color: black;
-}
+/*------------------------------*/

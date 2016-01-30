@@ -2,7 +2,14 @@ extends layout.jade
 block content
 	#wrap.container
 		#start-game.btn.btn-default.btn-lg Start Game
-		div#image-container.hidden
+		#options.container
+			.checkbox
+				input#sci-names(type="checkbox",checked="true")
+				| Scientific Names
+			.checkbox
+				input#common-names(type="checkbox",checked="true")
+				| Common Names
+		#image-container.hidden.container
 			img(src="/static/imgs/Dreissena_polymorpha/1.jpg", alt="img failed to load")
 		#input-container.container
 			.input-group
