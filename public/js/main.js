@@ -14,7 +14,13 @@ $(document).ready(function() {
 		currFolder = folderNames[tempIndex];
 		currIndex = Math.floor(Math.random()*10);
 		currCommonName = speciesNames[tempIndex];
+		$("#loading-wrapper").removeClass("hidden");
+		$("img").addClass("hidden");
 		$("#image-container > img").attr('src','/static/imgs/'+currFolder+'/'+currIndex+'.jpg');
+		$("#image-container > img").on('load', function() {
+			$("#loading-wrapper").addClass("hidden");
+			$("img").removeClass("hidden");			
+		});
 	}
 	var result = $("#result");
 	var validate = function() {
