@@ -36,10 +36,12 @@
 /*------------------------------*/
 
 /* Image */
-
-#image-container img {
-	margin-bottom: 50px;
+#image-container {
 	overflow: hidden;
+}
+#image-container img {
+	background-size: cover;
+	margin-bottom: 50px;
 	border-radius: 5px;
 }
 
