@@ -1,34 +1,51 @@
 extends layout.jade
 block content
-	#wrap.container
-		#start-game.btn.btn-default.btn-lg Start Game
-		#options.container
-			.checkbox
-				input#sci-names(type="checkbox",checked="true")
-				| Scientific Names
-			.checkbox
-				input#common-names(type="checkbox",checked="true")
-				| Common Names
-		#image-container.hidden.container
-			#loading-wrapper.hidden
-				#loading
-			img(src="", alt="img failed to load")
-		#input-container.container
-			.input-group
-				input.form-control(type='text', placeholder='Answer')
-				span.input-group-btn
-					button#submit.btn.btn-primary(type='button') Submit
-					button#show-ans.btn.btn-default(type='button') Show Answer
-					button#skip.btn.btn-danger(type='button') Skip
-			h4#answer.hidden
-			#result.alert.alert-success.hidden(role="alert") Correct!
-		#stats.container
-			li
-				.fa.fa-check
-				span#correct 0
-			li
-				.fa.fa-times
-				span#wrong 0
-			span#divider
-			li
-				span#percent 0%
+  #wrap.container
+    #start-game.btn.btn-default.btn-lg Start Game
+    #options.container
+      .checkbox
+        input#sci-names(type="checkbox",checked="true")
+        | Scientific Names
+      .checkbox
+        input#common-names(type="checkbox",checked="true")
+        | Common Names
+    #image-container.hidden.container
+      #loading-wrapper.hidden
+        #loading
+      img(src="", alt="img failed to load")
+    #instructions-container.container
+      button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#instructions') Click for Instructions
+      #instructions.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+              h4#myModalLabel.modal-title Instructions
+            .modal-body
+              | Select what you want to practice (scientific names, common names, or both), and click 'Start Game'.
+              br
+              br
+              | Type your answer into the input box. You do not need to capitalize, but spelling counts! Submit by clicking 'Submit' or pressing the 'Enter' key. 
+              br
+              br
+              | Your current correct/incorrect record is displayed at the bottom. If you get stuck, 'Show Answer' will display the correct common/scientific name. Clicking 'Skip' will go on to the next image without displaying the answer, and will count as a wrong answer. Have fun!
+    #input-container.container.text-center.hidden
+      .input-group
+        input.form-control(type='text', placeholder='Answer')
+      #controls.btn-group
+        button#submit.btn.btn-primary(type='button') Submit
+        button#show-ans.btn.btn-default(type='button') Show Answer
+        button#skip.btn.btn-danger(type='button') Skip
+      h4#answer.hidden
+      #result.alert.alert-success.hidden(role="alert") Correct!
+    #stats.container.hidden
+      li
+        .fa.fa-check
+        span#correct 0
+      li
+        .fa.fa-times
+        span#wrong 0
+      span#divider
+      li
+        span#percent 0%

@@ -10,6 +10,7 @@ $(document).ready(function() {
 	var currCommonName = "";
 
 	var getNewImg = function() {
+		$("#answer").addClass("hidden");
 		var tempIndex = Math.floor(Math.random()*113);
 		currFolder = folderNames[tempIndex];
 		currIndex = Math.floor(Math.random()*10);
@@ -47,7 +48,7 @@ $(document).ready(function() {
 			$(".form-control").val("");
 		}
 	};
-	var showAns = function() {
+	var updateAns = function() {
 		$("#answer").text(currCommonName.replace(/\_/g, ' ')+"  /  "+currFolder.replace(/\_/g, ' '));
 	}
 
@@ -66,8 +67,8 @@ $(document).ready(function() {
 
 	$("#start-game").click( function() {
 		$(this).hide();
-		$("#options").hide();
-		$("#image-container").removeClass("hidden");
+		$("#options, #instructions-container").hide();
+		$("#image-container, #input-container, #stats").removeClass("hidden");
 		if ($("#sci-names").prop('checked')) {
 			acceptScientificNames = true;
 		}
@@ -82,8 +83,8 @@ $(document).ready(function() {
 		getNewImg();
 	})
 	$("#show-ans").click( function() {
+		updateAns();
 		$("#answer").toggleClass("hidden");
-		showAns();
 	});
 	$(".form-control").keypress(function (e) {
 		console.log(e);
