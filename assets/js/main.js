@@ -94,4 +94,8 @@ $(document).ready(function() {
 			validate();
 		}
 	});
+
+	$("#close-modal, #help-button").click( function() {
+		$('.modal').toggleClass('hidden');
+	});
 });

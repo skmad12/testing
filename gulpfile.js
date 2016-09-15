@@ -43,11 +43,9 @@ gulp.task('js', function() {
         .pipe(reload({stream: true}));
 })
 
-gulp.task('watch', ['sass', 'js', 'imgs', 'fonts'], function () {
+gulp.task('watch', ['sass', 'js', 'fonts'], function () {
 
     //browserSync({server: './', notify: false});
-
-    gulp.watch('./assets/imgs/**/*', ['imgs']);
     gulp.watch('./assets/scss/*.scss', ['sass']);
     gulp.watch('./assets/js/*.js', ['js']);
 });

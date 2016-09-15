@@ -50,7 +50,7 @@ a, a:visited, a:link {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 /*------------------------------*/
@@ -88,27 +88,18 @@ a, a:visited, a:link {
 #image-container {
 	overflow: hidden;
 	height: 60%;
-<<<<<<< HEAD:assets/scss/style.scss
 	width: 50%;
   padding: 20px;
   background: white;
   border-radius: 4px;
   box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
-=======
-	width: 70%;
->>>>>>> 01806ebd0e5a58babfb8e1b4e4e4b691ad372c58:public/css/style.css
 }
 
 #image-container img {
 	background-size: cover;
-<<<<<<< HEAD:assets/scss/style.scss
 	width: 80%;
 	height: auto;
 	margin: 50px 0 50px 0;
-=======
-	min-width: 100%;
-  height: auto;
->>>>>>> 01806ebd0e5a58babfb8e1b4e4e4b691ad372c58:public/css/style.css
 	border-radius: 5px;
   overflow: hidden;
 }
@@ -126,24 +117,20 @@ a, a:visited, a:link {
     border: none;
     text-align: center;
     font-size: 1rem;
-    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
-
+    transition: all 0.2s ease;
     &:focus {
       outline: none;
+      box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.2);
     }
   }
 }
 
 #controls {
-<<<<<<< HEAD:assets/scss/style.scss
 	margin: 40px 0 25px 0;
 }
 
 .alert {
 	margin-top: 20px;
-=======
-  margin-top: 25px;
->>>>>>> 01806ebd0e5a58babfb8e1b4e4e4b691ad372c58:public/css/style.css
 }
 
 /*------------------------------*/
@@ -152,6 +139,10 @@ a, a:visited, a:link {
 
 .checkbox {
   margin: 0 auto;
+}
+
+#options {
+	margin-bottom: 25px;
 }
 
 /*------------------------------*/
@@ -163,9 +154,15 @@ a, a:visited, a:link {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+
+  ul {
+    background: white;
+    padding: 20px 15px;
+  }
 }
 
 #stats li {
+  display: inline-block;
 	list-style: none;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -245,24 +242,78 @@ a, a:visited, a:link {
 
 /*------------------------------*/
 
+/*    Modal    */
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    background: white;
+    padding: 20px 0 20px 0;
+
+    h1 {
+      padding: 15px 0 15px 0;
+    }
+
+    p {
+      padding: 10px 0 10px 0;
+    }
+
+  }
+
+  .container {
+    width: 70%;
+  }
+
+  #modal-buttons {
+    display: inline-block;
+    padding: 15px 0 15px 0;
+
+    #donate-button {
+      background: $darkblue;
+      box-shadow: 0px 4px 0px 0px darken($darkblue, 10%);
+      &:hover {
+        background: darken($darkblue, 10%);
+      }
+    }
+
+    #close-modal {
+      background: $orange;
+      box-shadow: 0px 4px 0px 0px darken($orange, 10%);
+      &:hover {
+        background: darken($orange, 10%);
+      }
+    }
+  }
+
+}
+
+/*------------------------------*/
+
 /*    Media Queries    */
 @media only screen 
-  and (max-width: 667px)  { 
+  and (min-device-width: 360px) 
+  and (max-device-width: 667px)  { 
 
   	#image-container {
-<<<<<<< HEAD:assets/scss/style.scss
   		width: 90%;
       img {
         width: 90%;
       }
-=======
-  		width: 100%;
->>>>>>> 01806ebd0e5a58babfb8e1b4e4e4b691ad372c58:public/css/style.css
   	}
-
-    #image-container img {
-      width: 100%;
-    }
 
   	.input-group input {
   		width: 100%;
