@@ -1,3 +1,2 @@
-# Invasive Species Science Olympiad Tester
-A game to practice ID'ing for the Invasive Species event.
+# Testing out some stuff
 http://invasives.herokuapp.com
